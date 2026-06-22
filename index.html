@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORGE Command | Construction Site Manager App for UK Builders</title>
+<meta name="description" content="FORGE Command is the site diary, snagging, audits and compliance app built for UK site managers and foremen. Six modules, six roles, one payment of £39.99. No subscription.">
+<style>
+  :root{
+    --gold:#c89b3c;
+    --gold-dark:#a07c25;
+    --ink:#16181d;
+    --slate:#23262e;
+    --paper:#f5f4f0;
+    --muted:#5c6068;
+    --line:#e2ded4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.55;
+  }
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  .btn{
+    display:inline-block;background:var(--gold);color:#1b1206;font-weight:700;
+    text-decoration:none;padding:16px 30px;border-radius:8px;font-size:1.06rem;
+    border:1px solid var(--gold-dark);letter-spacing:.2px;
+  }
+  .btn:hover{background:var(--gold-dark);color:#fff}
+  .btn-sub{font-size:.82rem;font-weight:600;color:var(--muted);margin-top:10px}
+  /* HERO */
+  header.hero{background:var(--ink);color:#f2efe7;padding:64px 0 58px}
+  .brandbar{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+  .brandbar .mark{
+    width:30px;height:30px;border:2px solid var(--gold);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--gold);font-size:.85rem
+  }
+  .brandbar .name{font-weight:700;letter-spacing:1.5px;font-size:.95rem;text-transform:uppercase}
+  .hero h1{font-size:2.5rem;line-height:1.12;max-width:18ch;margin-bottom:18px}
+  .hero p.lead{font-size:1.18rem;color:#cdc9bd;max-width:54ch;margin-bottom:30px}
+  .pricetag{display:inline-flex;align-items:baseline;gap:10px;margin-bottom:26px}
+  .pricetag .num{font-size:1.5rem;font-weight:800;color:var(--gold)}
+  .pricetag .small{color:#b7b3a7;font-size:.95rem}
+  .trustbar{display:flex;flex-wrap:wrap;gap:24px;margin-top:40px;border-top:1px solid #2f323b;padding-top:24px;color:#bdb9ad;font-size:.92rem}
+  .trustbar strong{color:#f2efe7}
+  /* SECTIONS */
+  section{padding:62px 0}
+  section h2{font-size:1.85rem;margin-bottom:12px;line-height:1.2}
+  section .intro{color:var(--muted);max-width:60ch;margin-bottom:38px;font-size:1.06rem}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px}
+  .card .tag{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold-dark)}
+  .card h3{font-size:1.16rem;margin:10px 0 8px}
+  .card p{color:var(--muted);font-size:.98rem}
+  /* WHO */
+  .who{background:var(--slate);color:#eceae3}
+  .who h2{color:#fff}
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .role{background:#2c2f38;border:1px solid #3a3e48;border-radius:10px;padding:18px 20px;font-weight:600}
+  .role span{display:block;color:#b3afa4;font-weight:400;font-size:.9rem;margin-top:4px}
+  /* PRICE BLOCK */
+  .pricebox{background:#fff;border:2px solid var(--gold);border-radius:16px;padding:42px;text-align:center;max-width:620px;margin:0 auto}
+  .pricebox .big{font-size:3rem;font-weight:800;color:var(--ink)}
+  .pricebox .once{color:var(--gold-dark);font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:.85rem;margin-bottom:18px}
+  .pricebox ul{list-style:none;text-align:left;max-width:430px;margin:22px auto 30px}
+  .pricebox li{padding:9px 0 9px 30px;position:relative;color:var(--slate)}
+  .pricebox li:before{content:"";position:absolute;left:0;top:14px;width:14px;height:8px;border-left:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(-45deg)}
+  /* FAQ */
+  .faq h2{margin-bottom:30px}
+  .qa{border-bottom:1px solid var(--line);padding:22px 0}
+  .qa h3{font-size:1.1rem;margin-bottom:8px}
+  .qa p{color:var(--muted)}
+  /* FINAL */
+  .final{background:var(--ink);color:#f2efe7;text-align:center}
+  .final h2{color:#fff;max-width:22ch;margin:0 auto 16px}
+  .final p{color:#cdc9bd;max-width:50ch;margin:0 auto 30px}
+  footer{background:#0f1115;color:#8a8d95;font-size:.85rem;padding:34px 0;text-align:center}
+  footer .name{color:var(--gold);font-weight:700;letter-spacing:1.5px}
+  @media(max-width:760px){
+    .grid,.roles{grid-template-columns:1fr}
+    .hero h1{font-size:1.95rem}
+    section{padding:46px 0}
+    .pricebox{padding:30px 22px}
+  }
+</style>
+</head>
+<body>
+<nav style="background:#16181d;border-bottom:1px solid #2f323b;position:sticky;top:0;z-index:50"><div style="max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><a href="index.html" style="font-weight:900;letter-spacing:.4px;color:#16181d;text-decoration:none;font-size:1.05rem;margin-right:auto">FORGE Command</a><a href="how-to-manage-a-construction-site.html" style="color:#cdc9bd;text-decoration:none;font-weight:600;font-size:.95rem">Manage a Site</a><a href="best-construction-site-management-apps-uk.html" style="color:#cdc9bd;text-decoration:none;font-weight:600;font-size:.95rem">Best Apps</a><a href="forge-command-vs-procore.html" style="color:#cdc9bd;text-decoration:none;font-weight:600;font-size:.95rem">vs Procore</a><a href="construction-app-vs-paper-site-records.html" style="color:#cdc9bd;text-decoration:none;font-weight:600;font-size:.95rem">App vs Paper</a><a href="https://forgecommand.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener" style="background:#a07c25;color:#ffffff;text-decoration:none;font-weight:800;padding:9px 18px;border-radius:8px;font-size:.92rem">Visit FORGE Command</a></div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brandbar">
+      <div class="mark">FC</div>
+      <div class="name">FORGE Command</div>
+    </div>
+    <h1>Run your whole site from your phone. Leave the paperwork on site where it belongs.</h1>
+    <p class="lead">The site diary, snagging, audits and compliance app built for UK site managers and foremen. Six modules, six roles, one phone.</p>
+    <div class="pricetag">
+      <span class="num">£39.99</span>
+      <span class="small">one payment. No subscription.</span>
+    </div>
+    <div>
+      <a class="btn" href="https://forgecommand.co.uk/?utm_source=ghpages&utm_medium=content&utm_campaign=landing" target="_blank" rel="noopener">Get FORGE Command</a>
+      <div class="btn-sub">Built for UK builders, not enterprise head offices.</div>
+    </div>
+    <div class="trustbar">
+      <div><strong>One-time price.</strong> Pay once, then it is yours.</div>
+      <div><strong>Six modules.</strong> The real daily job, in one app.</div>
+      <div><strong>GPS and weather stamped.</strong> Records that stand up later.</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Everything a site manager actually does, in one app</h2>
+    <p class="intro">No feature bloat, no enterprise dashboards you will never open. Six modules that map to the real work on a UK site.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Module 01</div>
+        <h3>Site Diary</h3>
+        <p>Log labour, plant, deliveries and progress in under two minutes an entry, as the day happens.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Module 02</div>
+        <h3>Smart Audits</h3>
+        <p>Run safety and quality inspections on site, against a consistent checklist, with an audit trail.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Module 03</div>
+        <h3>Regulations Library</h3>
+        <p>CDM, RAMS and method statement reference in your pocket, where you need it, not filed in the office.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Module 04</div>
+        <h3>Snag List</h3>
+        <p>Capture, photograph and track defects from the moment you spot them through to sign-off.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Module 05</div>
+        <h3>Email Centre</h3>
+        <p>Send reports and records straight from site, without retyping notes at home in the evening.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Module 06</div>
+        <h3>GPS and Weather Stamping</h3>
+        <p>Every record carries where and when it was made, with the weather on the day, so it holds up if disputed.</p>
+      </div>
+    </div>
+    <div style="margin-top:38px">
+      <a class="btn" href="https://forgecommand.co.uk/?utm_source=ghpages&utm_medium=content&utm_campaign=landing-features" target="_blank" rel="noopener">Get all six modules for £39.99</a>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <h2>Built for the people on site, not head office</h2>
+    <p class="intro" style="color:#b3afa4">FORGE Command is the anti-enterprise tool for UK construction. If you are running real work on a real site, it was built for your job.</p>
+    <div class="roles">
+      <div class="role">Site Manager<span>The full daily record, on your phone</span></div>
+      <div class="role">Foreman<span>Snags and diary as the day moves</span></div>
+      <div class="role">Project Manager<span>Progress and issues in one place</span></div>
+      <div class="role">H&S Officer<span>Audits and compliance on site</span></div>
+      <div class="role">Contracts Manager<span>Defensible, stamped records</span></div>
+      <div class="role">Quantity Surveyor<span>Evidence when a delay is disputed</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center;margin-bottom:6px">One payment. Then it is yours.</h2>
+    <p class="intro" style="text-align:center;margin:0 auto 36px">No subscription. No per-seat fee. No renewal to forget.</p>
+    <div class="pricebox">
+      <div class="big">£39.99</div>
+      <div class="once">One-time purchase</div>
+      <ul>
+        <li>All six modules included</li>
+        <li>Six site roles supported</li>
+        <li>Records GPS and weather stamped</li>
+        <li>Works on the phone already in your pocket</li>
+        <li>No monthly bill, ever</li>
+      </ul>
+      <a class="btn" href="https://forgecommand.co.uk/?utm_source=ghpages&utm_medium=content&utm_campaign=landing-price" target="_blank" rel="noopener">Get FORGE Command</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions site managers ask</h2>
+    <div class="qa">
+      <h3>Is FORGE Command a subscription?</h3>
+      <p>No. It is £39.99 paid once, then the app is yours, with no recurring charge.</p>
+    </div>
+    <div class="qa">
+      <h3>Will it work for a small firm?</h3>
+      <p>Yes. It is built for SME contractors, subcontractors, regional builders and the site teams who run their work, not for enterprise main contractors.</p>
+    </div>
+    <div class="qa">
+      <h3>Do I need training to use it?</h3>
+      <p>No. Six modules, one tap each, working from day one. There is no implementation project and no onboarding course.</p>
+    </div>
+    <div class="qa">
+      <h3>Why does GPS and weather stamping matter?</h3>
+      <p>When a delay or a defect is questioned weeks later, a stamped record gives you the date, the location and the weather on the day. That turns your account into evidence.</p>
+    </div>
+    <div class="qa">
+      <h3>Is it just a site diary?</h3>
+      <p>No. The diary is one of six modules. You also get snagging, audits, a regulations reference, an email centre, and GPS and weather stamping.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Get tomorrow's paperwork done by the time you lock the gate</h2>
+    <p>The site diary, snagging, audits and compliance, all on your phone, for one payment of £39.99.</p>
+    <a class="btn" href="https://forgecommand.co.uk/?utm_source=ghpages&utm_medium=content&utm_campaign=landing-final" target="_blank" rel="noopener">Get FORGE Command</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="name">FORGE COMMAND</div>
+    <p style="margin-top:8px">Construction site management app for UK builders and foremen. forgecommand.co.uk</p>
+  </div>
+</footer>
+
+</body>
+</html>
