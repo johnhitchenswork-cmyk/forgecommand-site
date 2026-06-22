@@ -1,0 +1,12 @@
+.env
+.env.*
+*.key
+*.pem
+*.p8
+AuthKey*
+credentials
+credentials.*
+*secret*
+*token*
+.DS_Store
+node_modules/
